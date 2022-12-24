@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+.outer {
+  height: 100vh;
+  width: 100%;
+}
+nav {
+  height: 10%;
+  background-color: #232f3e;
+  color: white;
+}
+main {
+  height: 90%;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgb(17, 233, 107);
+  border: 2px solid black;
+  transform: scale(0.45);
+  position: absolute;
+z-index: 8;
+left: -120px;
+top: 57px;
+}
+.hexagon {
+  position: relative;
+  width: 100px;
+  height: 57.736px;
+  background: yellow;
+  transform: scale(0.9);
+}
+.hexagon::before,
+.hexagon::after {
+  content: "";
+  position: absolute;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+}
+.hexagon::before {
+  bottom: 100%;
+  border-bottom: 28.86px solid yellow;
+}
+.hexagon::after {
+  top: 100%;
+  border-top: 28.86px solid yellow;
+}
+.heart {
+  position: absolute;
+  width: 50px;
+  height: 45px;
+  z-index: 3;
+  float: left;
+  transform: translate(-51%,-23%);
+  scale: 0.7;
+}
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #fc2e5a;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+ 
+  .cube {
+    margin-left: 300px;
+    --width: 404px;
+    --height: 188px;
+    --depth: 445px;
+    width: var(--width);
+    height: var(--height);
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(11deg) rotateY(13deg);
+  }
+  .cube-s {
+    position: absolute;
+    border: 2px #000000 solid;
+  }
+  .cube-s:nth-child(1), .cube-s:nth-child(2) {
+    --co: -0.5;
+    height: var(--height);
+    width: var(--width);
+    transform: translate3d(0 , 0, calc(var(--depth) * var(--co)));
+  }
+  .cube-s:nth-child(2) {
+    --co: 0.5;
+  }
+  .cube-s:nth-child(3), .cube-s:nth-child(4) {
+    --rt: 90deg;
+    height: var(--height);
+    width: var(--depth);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(var(--rt)) translate3d(0,0, calc(var(--width) * -0.5));
+  }
+  .cube-s:nth-child(4) {
+    --rt: -90deg;
+  }
+  .cube-s:nth-child(5), .cube-s:nth-child(6) {
+    --rt: -90deg;
+    height: var(--depth);
+    width: var(--width);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateX(var(--rt)) translate3d( 0 , 0, calc(var(--height) * -0.5) );
+  }
+  .cube-s:nth-child(6) {
+    --rt: 90deg;
+  }
+
+.f-3{
+    background-color:rgba(30, 143, 255, 0.8);
+}
+.f-4{
+    background-color: rgba(30, 143, 255, 0.8);
+}
+.star {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid yellow;
+    position: relative;
+top: 143px;
+left: -547px;    
+  }
+  .star:after {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid yellow;
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: -50px;
+  }
+    </style>
+    
+
+</head>
+<body>
+    <div class="outer">
+        <nav class="flex">
+            <h1>Q2) CHILD'S CUBOID</h1>
+        </nav>
+        <main class="flex">
+          
+        <div class="cube">
+            <div class="cube-s f-1"></div>
+            <div class="cube-s f-2"> <div class="circle flex">
+                <div class="hexagon flex"><div class="heart"></div></div>
+            </div></div>
+            <div class="cube-s f-3"></div>
+            <div class="cube-s f-4"></div>
+            <div class="cube-s f-5"></div>
+            <div class="cube-s f-6"></div>
+        </div>
+        <div class="star"></div>
+
+    </main>
+    </div>
+</body>
+</html>
